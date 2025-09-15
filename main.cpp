@@ -23,7 +23,6 @@ void printBestStudent()
 }
 void printAverage()
 {
-    int numOfStudent = countNumberOfStudent(numOfStudent);
     float midtermAvg = getMidtermAverage(students, numOfStudent);
     float finalAvg = getFinalAverage(students, numOfStudent);
     float totalAvg = getTotalAverage(students, numOfStudent);
@@ -40,7 +39,10 @@ void printStudentList(){
     }
 }
 
-void doTest1(){
+void doNamespaceTest(){
+    cout << "---------------------------" << endl;
+    cout << "Namespace Test" << endl;
+
     // 정수형 계산기 테스트 
     cout << "[IntCalc] 10 + 3 = " << 0 /*TODO*/ << endl;
     cout << "[IntCalc] 10 - 3 = " << 0 /*TODO*/ << endl;
@@ -52,8 +54,6 @@ void doTest1(){
     cout << "[IntCalc] 10.5 * 3.2 = " << 0 /*TODO*/ << endl;
     cout << "[IntCalc] 10.5 / 3.2 = " << 0 /*TODO*/ << endl;
 
-
-    cout << "-----------------------------" << endl;
 
     // 실수형 계산기 테스트
     cout << "[FloatCalc] 10 + 3 = " << 0.0f /*TODO*/ << endl;
@@ -67,8 +67,7 @@ void doTest1(){
     cout << "[FloatCalc] 10.5 * 3.2 = " << 0.0f /*TODO*/ << endl;
     cout << "[FloatCalc] 10.5 / 3.2 = " << 0.0f /*TODO*/ << endl;
 }
-void doTest2(){
-
+void doTest1(){
     cout << "---------------------------" << endl;
     cout << "Test 1" << endl;
     
@@ -76,37 +75,65 @@ void doTest2(){
     printAverage();
     printStudentList(); 
 }
-void doTest3(){
+void doTest2(){
     cout << "---------------------------" << endl;
     cout << "Test 2" << endl;
+    
     StudentStruct charlie("Charlie", 1003, 70, 99.0);
-    int idx = findStudentByStudentID(students, numOfStudent, charlie.id);
+
+
+    int idx = -1;
+    /* TODO: homework1.cpp의 findStudentByStudentID() 함수 호출을 homework2-2.h의 findStudentByStudentID 함수 선언에 맞춰 수정하기 */
+    /*
+    idx = findStudentByStudentID(charlie.id);
+    */
 
     if(idx >= 0)
         modifyRecord(students, numOfStudent, charlie);
 
-    addStudent(students, &numOfStudent, "Ana", 1051, 88, 65);
-    addStudent(students, &numOfStudent, "Suji", 1052, 90, 93);
-    addStudent(students, &numOfStudent, "Zhang", 1053, 100, 40);
+    /* TODO: homework1.cpp의 addStudent() 함수 호출를 homework2-2.h의 addStudent 함수 선언에 맞춰 수정하기 */
+    /*
+    addStudent("Ana", 1051, 88, 65);
+    addStudent("Suji", 1052, 90, 93);
+    addStudent("Zhang", 1053, 100, 40);
+    */    
 
     printBestStudent();
     printAverage();
     printStudentList(); 
 }
+void doTest3(){
+    std::cout << "---------------------------" << std::endl;
+    std::cout << "Test 3" << std::endl;
+    
+    /* TODO: homework1.cpp의 addStudent 함수를 homework2-2.h의 addStudent 함수에 맞춰 수정하기 */
+    /*
+    deleteStudent(1011);
+    deleteStudent(1029);
+    */
+
+    printStudentList(); 
+}
 
 int main(int argc, char **argv) {
 
-    doTest1();
+    doNamespaceTest();
 
     const int MAX_STUDENTS = 100;
-    students = new StudentStruct[MAX_STUDENTS];
-    fillStudentRecord(students, &numOfStudent);
 
-    doTest2();
-    doTest3();
+    /* FIXME: StudentStruct[MAX_STUDENTS] 메모리 동적 할당 */
+    students = nullptr; 
 
-    delete[] students;
-    numOfStudent = 0;
+    if(students != nullptr){
+        fillStudentRecord(students, &numOfStudent);
+
+        doTest1();
+        doTest2();
+        doTest3();
+
+        delete[] students;
+        numOfStudent = 0;
+    }
    
     return 0;
 }

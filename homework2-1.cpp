@@ -1,41 +1,5 @@
-// 정수형 계산기
-namespace IntCalc {
-    int add(int a, int b){
-        /*TODO*/
-        return 0;
-    }
-    int subtract(int a, int b){
-        /*TODO*/
-        return 0;
-    }
-    int multiply(int a, int b){
-        /*TODO*/
-        return 0;
-    }
-    int divide(int a, int b){
-        /*TODO*/
-        return 0;
-    }
-}
+#include "homework2-1.h"
 
-// 실수형 계산기
-namespace FloatCalc {
-    float add(float a, float b){
-        /*TODO*/
-        return 0.0f;
-    }
-    float subtract(float a, float b){
-        /*TODO*/
-        return 0.0f;
-    }
-    float multiply(float a, float b){
-        /*TODO*/
-        return 0.0f;
-    }
+/* TODO IntClac 네임스페이스 및 함수 정의하기 */
 
-    float divide(float a, float b){
-        /*TODO*/
-        return 0.0f;
-    }
-
-}
+/* TODO FloatClac 네임스페이스 및 함수 정의하기 */

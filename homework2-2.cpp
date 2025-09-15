@@ -103,11 +103,6 @@ void deleteStudent(StudentStruct* students, int *numOfStudent, int id) {
     }
 }
 
-int countNumberOfStudent(int numOfStudent) {
-    /* TODO */
-    return 0;
-}
-
 float getMidtermAverage(StudentStruct* students, int numOfStudent) {
     /* TODO */
     return 0.0f;

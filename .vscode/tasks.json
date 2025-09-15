@@ -11,8 +11,19 @@
                 "homework2-1.cpp",
                 "homework2-2.cpp",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
+            "windows": {
+                "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "homework2-1.cpp",
+                "homework2-2.cpp",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}"
+                ]
+            },
             "options": {
                 "cwd": "${fileDirname}"
             },

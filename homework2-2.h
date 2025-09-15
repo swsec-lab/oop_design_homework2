@@ -26,7 +26,6 @@ void modifyRecord(StudentStruct *students, int numOfStudent, const StudentStruct
 
 void addStudent(StudentStruct *students, int *numOfStudent, const char* name, int id, float midterm, float final);
 void deleteStudent(StudentStruct* students, int *numOfStudent, int id);
-int countNumberOfStudent(int numOfStudent);
 float getMidtermAverage(StudentStruct* students, int numOfStudent);
 float getFinalAverage(StudentStruct* students, int numOfStudent);
 float getTotalAverage(StudentStruct* students, int numOfStudent);
